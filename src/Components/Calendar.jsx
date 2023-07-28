@@ -1,26 +1,41 @@
 import React, { useState } from 'react';
 
-const ControlledInput = () => {
-  const [input, setInput] = useState('');
+const MyApp = () => {
+  const [inputValue, setInputValue] = useState('');
 
-  // Define the handleChange method to update the input state
   const handleChange = (event) => {
-    setInput(event.target.value);
+    setInputValue(event.target.value);
   };
 
   return (
-    <div className="p-4">
-      {/* Input element with value and onChange event */}
+    <div>
+      {/* Change code below this line */}
+      <GetInput input={inputValue} handleChange={handleChange} />
+      <RenderInput input={inputValue} />
+      {/* Change code above this line */}
+    </div>
+  );
+};
+
+const GetInput = ({ input, handleChange }) => {
+  return (
+    <div>
+      <h3>Get Input:</h3>
       <input
-        type="text"
         value={input}
         onChange={handleChange}
-        className="px-4 py-2 border rounded outline-none"
       />
-      <h4 className="mt-4">Controlled Input:</h4>
+    </div>
+  );
+};
+
+const RenderInput = ({ input }) => {
+  return (
+    <div>
+      <h3>Input Render:</h3>
       <p>{input}</p>
     </div>
   );
 };
 
-export default ControlledInput;
+export default MyApp;

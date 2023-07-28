@@ -1,10 +1,14 @@
 import React from "react";
 import Calendar from "./Components/Calendar";
+import MAcc from "./Components/MAcc";
 
 function App() {
-  // The App component serves as the entry point of the application.
-  // It renders the Calendar component, which displays a calendar interface.
-  return <Calendar />;
-};
+  return (
+    <div>
+      {/* <Calendar /> */}
+      <MAcc />
+    </div>
+  );
+}
 
 export default App;
